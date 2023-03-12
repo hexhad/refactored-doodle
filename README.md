@@ -1,3 +1,5 @@
 ## Testing DOODLE
 
-Group/GroupToMap
+Group
+GroupToMap
+Pipeline

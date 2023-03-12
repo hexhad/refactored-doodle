@@ -1,5 +1,6 @@
 import "./App.css";
-import core from "core-js/proposals/array-grouping-stage-3-2";
+import group from "core-js/full/array/group";
+
 function App() {
   /**
    * Experimental
@@ -10,12 +11,12 @@ function App() {
    * */
 
   //  Example 01
-  let groupTest = [1, 2, 3, 4, 5].group((it) => it % 2);
-  console.log(groupTest);
+  // let groupTest = [1, 2, 3, 4, 5].group((it) => it % 2);
+  // console.log(groupTest);
 
-  const map = [1, 2, 3, 4, 5].groupToMap((it) => it % 2);
-  console.log(map.get(0));
-  console.log(map.get(1));
+  // const map = [1, 2, 3, 4, 5].groupToMap((it) => it % 2);
+  // console.log(map.get(0));
+  // console.log(map.get(1));
 
   //  Example 02
   const inventory = [
@@ -31,6 +32,15 @@ function App() {
   console.log(inventory);
   const result2 = inventory.group(callbackFunc);
   console.log(result2);
+
+  /**PIPELINE*/
+  
+  // With pipes
+  // result
+  // |> encase(concat("Anything "))
+  // |> map(toUpper)
+  // |> chain(encase((x) => x + " and that"))
+  // |> fork(console.log)(setResult);
 
   return <div className="App">Hello</div>;
 }
