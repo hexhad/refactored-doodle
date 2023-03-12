@@ -1,5 +1,6 @@
 import "./App.css";
 import group from "core-js/full/array/group";
+import _ from "lodash";
 
 function App() {
   /**
@@ -34,13 +35,24 @@ function App() {
   console.log(result2);
 
   /**PIPELINE*/
-  
+
   // With pipes
   // result
   // |> encase(concat("Anything "))
   // |> map(toUpper)
   // |> chain(encase((x) => x + " and that"))
   // |> fork(console.log)(setResult);
+
+  /**LODASH*/
+
+  let lodashOne = _.groupBy([6.1, 4.2, 6.3], Math.floor);
+  console.log("lodashOne", lodashOne);
+  // => { '4': [4.2], '6': [6.1, 6.3] }
+
+  // The `_.property` iteratee shorthand.
+  let lodashTwo = _.groupBy(["one", "two", "three"], "length");
+  console.log("lodashTwo", lodashTwo);
+  // => { '3': ['one', 'two'], '5': ['three'] }
 
   return <div className="App">Hello</div>;
 }
